@@ -1,0 +1,37 @@
+<!--
+ * @Date: 2021-01-19 11:19:59
+ * @LastEditTime: 2021-01-19 15:17:38
+ * @Author: WangYongJie
+ * @Work-email: wangyongjie2@gome.com.cn
+ * @Private-email: admin@xiaodongxier.com
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport"   content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+     <title>用户测试用例</title>
+     <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.9.3/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.9.3/aliplayer-min.js"></script>
+     <style>
+         .prism-big-play-btn {
+             top: 40% !important;
+             left: 40% !important;
+         }
+     </style>
+    </head>
+    <body>
+        <div  class="prism-player" id="J_prismPlayer"></div>
+        <script>
+            var player = new Aliplayer({
+            id: 'J_prismPlayer',
+            width: '100%',
+            autoplay: false,
+            // 支持播放地址播放,此播放优先级最高
+            source : 'http://10.2.134.6:8080/Vue2.5%E5%BC%80%E5%8F%91%E5%8E%BB%E5%93%AA%E5%84%BF%E7%BD%91App%E4%BB%8E%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/%E7%AC%AC2%E7%AB%A0%20Vue%20%E8%B5%B7%E6%AD%A5/2-8.mp4',
+            },function(player){
+                console.log('播放器创建好了。')
+           });
+        </script>
+    </body>
+</html>

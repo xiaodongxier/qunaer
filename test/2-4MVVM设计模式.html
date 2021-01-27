@@ -1,6 +1,6 @@
 <!--
  * @Date: 2021-01-08 11:27:12
- * @LastEditTime: 2021-01-09 22:59:45
+ * @LastEditTime: 2021-01-11 15:03:20
  * @Author: WangYongJie
  * @Work-email: wangyongjie2@gome.com.cn
  * @Private-email: admin@xiaodongxier.com
@@ -10,22 +10,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vue</title>
-    <script src="./static/js/vue.js"></script>
-    <!-- <script src="./static/js/jquery.js"></script> -->
+    <title>TodoList Jquery</title>
+    <script src="./static/js/jquery.js"></script>
 </head>
 <body>
     <div id="app">
-        {{mess}}
+        <input id="input" type="text">
+        <button id="btn">提交</button>
+        <ul id="list"></ul>
     </div>
 
+    <!-- 
+        MVP 设计模式
+        M 模型层 AJAX
+        V 视图
+        P 控制器
+    -->
+
     <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                mess: "hello word"
+        function Page(){}
+
+        $.extend(Page.prototype,{
+            init: function(){
+                this.bindEvents();
+            },
+            bindEvents: function(){
+                var btn = $("#btn");
+                btn.on('click',$.proxy(this.handleBtnClick, this));
+            },
+            handleBtnClick: function(){
+                // alert("123")
+                var inputElem = $("#input");
+                var inputValue = inputElem.val();
+                var ulElem = $("#list");
+                ulElem.append('<li>' + inputValue + '</li>')
+                inputElem.val("")
+                // var list = $("#list");
             }
         })
-    </script>
+
+        var page = new Page();
+        page.init();
+
+        console.log(page)
+    </script> 
 </body>
 </html>

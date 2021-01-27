@@ -1,0 +1,37 @@
+<!--
+ * @Date: 2021-01-08 11:27:12
+ * @LastEditTime: 2021-01-12 15:15:55
+ * @Author: WangYongJie
+ * @Work-email: wangyongjie2@gome.com.cn
+ * @Private-email: admin@xiaodongxier.com
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端组件化</title>
+    <script src="./static/js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        把页面像拼积木一样拼起来
+        后期易于维护
+        
+     -->
+    <div id="app">
+        {{mess}}
+    </div>
+    <div class="box">
+        
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: { 
+                mess: "hello word"
+            }
+        })
+    </script>
+</body>
+</html>
